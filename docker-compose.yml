@@ -1,0 +1,34 @@
+version: "3.7"
+services:
+  apigateway:
+    image: apigateway
+    container_name: apigateway
+    ports:
+      - "5171:80"
+    build:
+      context: ApiGatewaye.Api
+      dockerfile: Dockerfile
+    networks:
+      - real
+  api1:
+    image: app1
+    container_name: app1
+    ports:
+      - "5172:80" 
+    build:
+      context: App1
+      dockerfile: Dockerfile
+    networks:
+      - real
+  app2:
+    image: app2
+    container_name: app2
+    ports:
+      - "5173:80"
+    build:
+      context: App2
+      dockerfile: Dockerfile
+    networks:
+      - real
+networks:
+  real:
