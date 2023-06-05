@@ -1,0 +1,27 @@
+﻿{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/app1/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "app1",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/{everything}"
+    },
+    {
+      "UpstreamPathTemplate": "/app2/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "app2",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/{everything}"
+    }
+  ]
+}
