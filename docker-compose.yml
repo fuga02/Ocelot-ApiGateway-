@@ -1,4 +1,4 @@
-version: "3.7"
+﻿version: "3.7"
 services:
   apigateway:
     image: apigateway
@@ -6,8 +6,8 @@ services:
     ports:
       - "5171:80"
     build:
-      context: ApiGatewaye.Api
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile.WebApiGateway
     networks:
       - real
   api1:
@@ -16,8 +16,8 @@ services:
     ports:
       - "5172:80" 
     build:
-      context: App1
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile.WebApi1
     networks:
       - real
   app2:
@@ -26,8 +26,8 @@ services:
     ports:
       - "5173:80"
     build:
-      context: App2
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile.WebApi2
     networks:
       - real
 networks:
